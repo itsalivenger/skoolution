@@ -110,8 +110,8 @@ export default function SwiperComponents() {
 						<div className="flex flex-col mx-auto gap-3.5 bg-white dark:bg-skblack-second p-8 max-w-96 rounded-sm shadow-xl">
 							<div className="flex items-center gap-4">
 								<img
-									src="/sk/testimony_4.webp"
-									alt="Testimony 4"
+									src="/sk/testimony_5.webp"
+									alt="Testimony 5"
 									className="w-20 h-20"
 								/>
 								<div className="flex flex-col gap-0.5 justify-center">
@@ -133,7 +133,7 @@ export default function SwiperComponents() {
 							<div className="flex items-center gap-4">
 								<img
 									src="/sk/testimony_5.webp"
-									alt="Testimony 5"
+									alt="Testimony 4"
 									className="w-20 h-20"
 								/>
 								<div className="flex flex-col gap-0.5 justify-center">
