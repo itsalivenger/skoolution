@@ -2,6 +2,7 @@ import { AlignJustify, LogIn, Sun, X } from "lucide-react";
 import Button from "./ui/Button";
 import ChooseLanguage from "./ui/ChooseLanguage";
 import Mode from "./ui/Mode";
+import Link from "next/link";
 
 export default function Header({ isOpenMenu, setIsOpenMenu }) {
 	return (
@@ -21,15 +22,15 @@ export default function Header({ isOpenMenu, setIsOpenMenu }) {
 			</div>
 			{/* Navbar */}
 			<nav className="hidden lg:flex gap-[38px] lg:gap-5 xl:gap-[38px]">
-				<a
+				<Link
 					href="#"
 					className="relative font-semibold text-skblue before:absolute before:-bottom-1 before:w-[calc(100%)] before:-left-[0px] before:h-0.5 before:bg-skblue"
 				>
 					Accueil
-				</a>
-				<a href="#services">Services</a>
-				<a href="#fonctionnalité">Fonctionnalité</a>
-				<a href="#témoignage">Témoignage</a>
+				</Link>
+				<Link href="#services">Services</Link>
+				<Link href="#fonctionnalité">Fonctionnalité</Link>
+				<Link href="#témoignage">Témoignage</Link>
 				{/* <a href="#faqs">FAQs</a> */}
 			</nav>
 			{/* Login + Menu*/}
@@ -40,24 +41,19 @@ export default function Header({ isOpenMenu, setIsOpenMenu }) {
 					<Mode />
 					{/* Login */}
 					<div className="hidden sm:flex">
-						
 						<Button
-
-							href="/commencez"
-
-						
-
+							href="/login"
 							color="text-white"
 							bg="bg-skblue"
 							text="Commencer"
 						/>
 					</div>
-					<a
+					<Link
 						href="/login"
 						className="flex sm:hidden border cursor-pointer  border-gray-400 p-2.5 rounded-full  hover:bg-neutral-100 bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-700"
 					>
 						<LogIn size={20} strokeWidth={2} className="text-skblue" />
-					</a>
+					</Link>
 				</div>
 				{/* Humberger Menu */}
 				<div className="lg:hidden relative w-[41px]">
@@ -93,10 +89,10 @@ export default function Header({ isOpenMenu, setIsOpenMenu }) {
 						>
 							Accueil
 						</a>
-						<a href="#services">Services</a>
-						<a href="#fonctionnalité">Fonctionnalité</a>
-						<a href="#témoignage">Témoignage</a>
-						<a href="#faqs">FAQs</a>
+						<Link href="#services">Services</Link>
+						<Link href="#fonctionnalité">Fonctionnalité</Link>
+						<Link href="#témoignage">Témoignage</Link>
+						<Link href="#faqs">FAQs</Link>
 					</div>
 				</div>
 			</div>
