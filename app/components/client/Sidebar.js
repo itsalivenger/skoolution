@@ -13,14 +13,14 @@ export default function Sidebar() {
 	const [opensidebar, setOpensidebar] = useState(true);
 	return (
 		<aside
-			className={`bg-white absolute md:relative h-dvh p-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
-				opensidebar ? " w-[280px]" : " w-[80px]"
+			className={`relative bg-white absolute md:relative h-dvh px-2 md:px-5 py-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
+				opensidebar ? " w-[280px]" : " w-[60px] md:w-[80px]"
 			}  transition-all duration-300 z-10`}
 		>
 			{/* Logo + Links */}
 			<div className="flex flex-col gap-5">
 				{/* Logo */}
-				<div className="flex justify-between items-center">
+				<div className="flex justify-center md:justify-between items-center">
 					<div className="font-poppins text-xl sm:text-2xl flex items-center gap-1 tracking-wide font-semibold uppercase">
 						<span
 							className={`${
@@ -43,7 +43,7 @@ export default function Sidebar() {
 						onClick={() => {
 							setOpensidebar(!opensidebar);
 						}}
-						className={`text-neutral-600 cursor-pointer ${
+						className={`absolute left-0 top-0 text-neutral-600 cursor-pointer ${
 							opensidebar ? "translate-x-9" : "translate-x-2.5"
 						} transition-all duration-300`}
 					>
@@ -55,12 +55,12 @@ export default function Sidebar() {
 					</button>
 				</div>
 				{/* Links */}
-				<div className="flex flex-col gap-3.5">
+				<div className="flex items-center flex-col gap-3.5">
 					<Link
 						href="#"
 						className={`flex ${
 							opensidebar ? "justify-start" : "justify-center"
-						} gap-3.5 bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-full text-skblue`}
+						} gap-3.5 bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-fit md:w-full text-skblue`}
 					>
 						<Home size={20} className="text-skblue" />
 						<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
@@ -71,7 +71,7 @@ export default function Sidebar() {
 						href="#"
 						className={`flex ${
 							opensidebar ? "justify-start" : "justify-center"
-						} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
+						} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-fit md:w-full text-neutral-500`}
 					>
 						<GraduationCap size={20} className="text-neutral-500" />
 						<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
@@ -82,7 +82,7 @@ export default function Sidebar() {
 						href="#"
 						className={`flex ${
 							opensidebar ? "justify-start" : "justify-center"
-						} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
+						} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-fit md:w-full text-neutral-500`}
 					>
 						<ChartNoAxesCombined size={20} className="text-neutral-500" />
 						<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
@@ -96,7 +96,7 @@ export default function Sidebar() {
 				href="#"
 				className={`flex ${
 					opensidebar ? "justify-start" : "justify-center"
-				} gap-3.5 hover:bg-blue-50 text-neutral-500 p-2 rounded-md w-full`}
+				} gap-3.5 hover:bg-blue-50 text-neutral-500 p-2 rounded-md w-fit md:w-full`}
 			>
 				<LogOut size={20} className="text-neutral-500" />
 				<span className={`${opensidebar ? "inline-block" : "hidden"}`}>

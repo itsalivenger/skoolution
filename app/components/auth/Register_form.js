@@ -79,7 +79,7 @@ export default function Register_form() {
 							step == 3 ? "text-skblue" : "text-[#4478C7]"
 						} text-sm transition-all duration-500 delay-500`}
 					>
-						Étape 2
+						Étape 3
 					</p>
 				</div>
 			</div>
@@ -152,7 +152,7 @@ export default function Register_form() {
 						<div className="flex flex-col gap-1">
 							<label className="px-5">Mot de passe</label>
 							<input
-								type="text"
+								type="password"
 								className="border border-neutral-400 outline-0 py-2.5 pl-5"
 								placeholder="Ecrivez votre numéro..."
 							/>
