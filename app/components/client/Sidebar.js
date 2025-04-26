@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
 	ChartNoAxesCombined,
-	CircleChevronRight,
+	ChevronRight,
 	GraduationCap,
 	Home,
 	LogOut,
@@ -14,7 +14,7 @@ export default function Sidebar() {
 	return (
 		<div className="absolute md:relative  z-50">
 			<aside
-				className={`bg-white h-dvh px-2 md:px-5 py-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
+				className={`bg-white h-dvh px-2 md:px-5 py-6 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
 					opensidebar ? " w-[280px]" : " w-[60px] md:w-[80px]"
 				}  transition-all duration-300`}
 			>
@@ -48,14 +48,13 @@ export default function Sidebar() {
 							onClick={() => {
 								setOpensidebar(!opensidebar);
 							}}
-							className={`absolute right-0 top-6 text-neutral-600 cursor-pointer translate-x-1/2 ${
+							className={`absolute right-0 top-7 text-neutral-600 cursor-pointer translate-x-1/2 ${
 								opensidebar ? "" : ""
 							} transition-all duration-300`}
 						>
-							<CircleChevronRight
-								size={25}
+							<ChevronRight
 								strokeWidth={1.5}
-								className="bg-white text-skblue rounded-full"
+								className="bg-white border-2 border-skblue text-skblue rounded-full w-5 h-5 md:w-6 md:h-6"
 							/>
 						</button>
 					</div>
