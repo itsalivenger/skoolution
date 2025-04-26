@@ -10,12 +10,12 @@ import {
 import Link from "next/link";
 
 export default function Sidebar() {
-	const [opensidebar, setOpensidebar] = useState(false);
+	const [opensidebar, setOpensidebar] = useState(true);
 	return (
 		<aside
-			className={`h-screen p-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
+			className={`bg-white absolute md:relative h-dvh p-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
 				opensidebar ? " w-[280px]" : " w-[80px]"
-			}  transition-all duration-300`}
+			}  transition-all duration-300 z-10`}
 		>
 			{/* Logo + Links */}
 			<div className="flex flex-col gap-5">

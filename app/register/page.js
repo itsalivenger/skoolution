@@ -5,7 +5,7 @@ import {
 	faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { Check } from "lucide-react";
-import Register_form from "../components/Register_form";
+import Register_form from "../components/auth/Register_form";
 import Link from "next/link";
 
 export default function page() {
