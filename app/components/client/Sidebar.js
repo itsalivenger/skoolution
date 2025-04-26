@@ -12,97 +12,103 @@ import Link from "next/link";
 export default function Sidebar() {
 	const [opensidebar, setOpensidebar] = useState(true);
 	return (
-		<aside
-			className={`relative bg-white absolute md:relative h-dvh px-2 md:px-5 py-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
-				opensidebar ? " w-[280px]" : " w-[60px] md:w-[80px]"
-			}  transition-all duration-300 z-10`}
-		>
-			{/* Logo + Links */}
-			<div className="flex flex-col gap-5">
-				{/* Logo */}
-				<div className="flex justify-center md:justify-between items-center">
-					<div className="font-poppins text-xl sm:text-2xl flex items-center gap-1 tracking-wide font-semibold uppercase">
-						<span
-							className={`${
-								opensidebar
-									? "w-auto text-xl sm:text-2xl h-[40px]"
-									: "w-9 text-sm h-[30px]"
-							} flex justify-center items-center px-3.5  bg-skblue text-white`}
-						>
-							sk
-						</span>
-						<span
-							className={`${
-								opensidebar ? "inline-block" : "hidden"
-							} text-skblue`}
-						>
-							oolution
-						</span>
-					</div>
-					<button
-						onClick={() => {
-							setOpensidebar(!opensidebar);
-						}}
-						className={`absolute left-0 top-0 text-neutral-600 cursor-pointer ${
-							opensidebar ? "translate-x-9" : "translate-x-2.5"
-						} transition-all duration-300`}
-					>
-						<CircleChevronRight
-							size={30}
-							strokeWidth={1.5}
-							className="bg-white text-skblue rounded-full"
-						/>
-					</button>
-				</div>
-				{/* Links */}
-				<div className="flex items-center flex-col gap-3.5">
-					<Link
-						href="#"
-						className={`flex ${
-							opensidebar ? "justify-start" : "justify-center"
-						} gap-3.5 bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-fit md:w-full text-skblue`}
-					>
-						<Home size={20} className="text-skblue" />
-						<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
-							Acceuil
-						</span>
-					</Link>
-					<Link
-						href="#"
-						className={`flex ${
-							opensidebar ? "justify-start" : "justify-center"
-						} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-fit md:w-full text-neutral-500`}
-					>
-						<GraduationCap size={20} className="text-neutral-500" />
-						<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
-							Mes Matieres
-						</span>
-					</Link>
-					<Link
-						href="#"
-						className={`flex ${
-							opensidebar ? "justify-start" : "justify-center"
-						} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-fit md:w-full text-neutral-500`}
-					>
-						<ChartNoAxesCombined size={20} className="text-neutral-500" />
-						<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
-							Ma Progression
-						</span>
-					</Link>
-				</div>
-			</div>
-			{/* Logout */}
-			<Link
-				href="#"
-				className={`flex ${
-					opensidebar ? "justify-start" : "justify-center"
-				} gap-3.5 hover:bg-blue-50 text-neutral-500 p-2 rounded-md w-fit md:w-full`}
+		<div className="absolute md:relative  z-50">
+			<aside
+				className={`bg-white h-dvh px-2 md:px-5 py-5 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
+					opensidebar ? " w-[280px]" : " w-[60px] md:w-[80px]"
+				}  transition-all duration-300`}
 			>
-				<LogOut size={20} className="text-neutral-500" />
-				<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
-					Logout
-				</span>
-			</Link>
-		</aside>
+				{/* Logo + Links */}
+				<div className="flex flex-col gap-5">
+					{/* Logo */}
+					<div
+						className={`flex ${
+							opensidebar ? "justify-start" : "justify-center"
+						} items-center`}
+					>
+						<div className="font-poppins text-xl sm:text-2xl flex items-center gap-1 tracking-wide font-semibold uppercase">
+							<span
+								className={`${
+									opensidebar
+										? "w-auto text-xl sm:text-2xl h-[40px]"
+										: "w-9 text-sm h-[30px]"
+								} flex justify-center items-center px-3.5  bg-skblue text-white`}
+							>
+								sk
+							</span>
+							<span
+								className={`${
+									opensidebar ? "inline-block" : "hidden"
+								} text-skblue`}
+							>
+								oolution
+							</span>
+						</div>
+						<button
+							onClick={() => {
+								setOpensidebar(!opensidebar);
+							}}
+							className={`absolute right-0 top-6 text-neutral-600 cursor-pointer translate-x-1/2 ${
+								opensidebar ? "" : ""
+							} transition-all duration-300`}
+						>
+							<CircleChevronRight
+								size={25}
+								strokeWidth={1.5}
+								className="bg-white text-skblue rounded-full"
+							/>
+						</button>
+					</div>
+					{/* Links */}
+					<div className="flex items-center flex-col gap-3.5">
+						<Link
+							href="#"
+							className={`flex ${
+								opensidebar ? "justify-start" : "justify-center"
+							} gap-3.5 bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-full text-skblue`}
+						>
+							<Home size={20} className="text-skblue" />
+							<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+								Acceuil
+							</span>
+						</Link>
+						<Link
+							href="#"
+							className={`flex ${
+								opensidebar ? "justify-start" : "justify-center"
+							} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
+						>
+							<GraduationCap size={20} className="text-neutral-500" />
+							<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+								Mes Matieres
+							</span>
+						</Link>
+						<Link
+							href="#"
+							className={`flex ${
+								opensidebar ? "justify-start" : "justify-center"
+							} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
+						>
+							<ChartNoAxesCombined size={20} className="text-neutral-500" />
+							<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+								Ma Progression
+							</span>
+						</Link>
+					</div>
+				</div>
+				{/* Logout */}
+				<Link
+					href="#"
+					className={`flex ${
+						opensidebar ? "justify-start" : "justify-center"
+					} gap-3.5 hover:bg-blue-50 text-neutral-500 p-2 rounded-md w-fit md:w-full`}
+				>
+					<LogOut size={20} className="text-neutral-500" />
+					<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+						Logout
+					</span>
+				</Link>
+			</aside>
+		</div>
 	);
 }
