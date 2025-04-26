@@ -1,5 +1,5 @@
 import { Award, Check, GraduationCap, Send } from "lucide-react";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 
 export default function Hero() {
 	return (

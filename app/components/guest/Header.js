@@ -1,7 +1,7 @@
 import { AlignJustify, LogIn, Sun, X } from "lucide-react";
-import Button from "./ui/Button";
-import ChooseLanguage from "./ui/ChooseLanguage";
-import Mode from "./ui/Mode";
+import Button from "../ui/Button";
+import ChooseLanguage from "../ui/ChooseLanguage";
+import Mode from "../ui/Mode";
 import Link from "next/link";
 
 export default function Header({ isOpenMenu, setIsOpenMenu }) {

@@ -1,5 +1,5 @@
 import { ChartNoAxesCombined, Gauge, ListTodo, SquarePen } from "lucide-react";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 
 export default function Functionality() {
 	return (
