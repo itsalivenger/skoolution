@@ -1,5 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper";
-import SwiperComponents from "./guest/SwiperComponents";
+import SwiperComponents from "./SwiperComponents";
 
 export default function Testimony() {
 	return (
