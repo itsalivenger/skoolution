@@ -1,22 +1,30 @@
 "use client";
-import { useState } from "react";
-import {
-	ChartNoAxesCombined,
-	ChevronRight,
-	GraduationCap,
-	Home,
-	LogOut,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import useClickOutside from "../../hooks/UseClickOutside";
+import { ChartNoAxesCombined, GraduationCap, Home, LogOut } from "lucide-react";
 import Link from "next/link";
 
 export default function Sidebar() {
-	const [opensidebar, setOpensidebar] = useState(true);
+	// Close and Open The Sidebar On Focus Change
+	const [opensidebar, setOpensidebar] = useState(false);
+	const sidebarRef = useRef(null);
+	useClickOutside(sidebarRef, () => setOpensidebar(false));
+	useEffect(() => {
+		// Detect screen width when component mounts
+		if (window.innerWidth >= 768) {
+			setOpensidebar(true); // md and above => open
+		} else {
+			setOpensidebar(false); // mobile => collapsed
+		}
+	}, []);
 	return (
 		<div className="absolute md:relative  z-50">
 			<aside
 				className={`bg-white h-dvh px-2 md:px-5 py-6 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
 					opensidebar ? " w-[280px]" : " w-[60px] md:w-[80px]"
 				}  transition-all duration-300`}
+				ref={sidebarRef}
+				onClick={() => setOpensidebar(true)}
 			>
 				{/* Logo + Links */}
 				<div className="flex flex-col gap-5">
@@ -44,19 +52,6 @@ export default function Sidebar() {
 								oolution
 							</span>
 						</div>
-						<button
-							onClick={() => {
-								setOpensidebar(!opensidebar);
-							}}
-							className={`absolute right-0 top-7 text-neutral-600 cursor-pointer translate-x-1/2 ${
-								opensidebar ? "" : ""
-							} transition-all duration-300`}
-						>
-							<ChevronRight
-								strokeWidth={1.5}
-								className="bg-white border-2 border-skblue text-skblue rounded-full w-5 h-5 md:w-6 md:h-6"
-							/>
-						</button>
 					</div>
 					{/* Links */}
 					<div className="flex items-center flex-col gap-3.5">
