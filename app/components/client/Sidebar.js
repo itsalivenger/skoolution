@@ -18,9 +18,9 @@ export default function Sidebar() {
 		}
 	}, []);
 	return (
-		<div className="absolute md:relative  z-50">
+		<div className="absolute md:relative z-50">
 			<aside
-				className={`bg-white h-dvh px-2 md:px-5 py-6 flex flex-col justify-between gap-5 shadow-[14px_4px_42px_-8px_#e3e3e3] ${
+				className={`bg-white h-dvh px-2 md:px-5 py-6 flex flex-col justify-between gap-5 shadow-sm md:shadow-[14px_4px_42px_-8px_#e3e3e3] ${
 					opensidebar ? " w-[280px]" : " w-[60px] md:w-[80px]"
 				}  transition-all duration-300`}
 				ref={sidebarRef}
