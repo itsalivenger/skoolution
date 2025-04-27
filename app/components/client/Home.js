@@ -40,11 +40,14 @@ export default function Home() {
 								<p className="text-sm font-semibold">32</p>
 								<p className="text-[12px]">Leçons complétées</p>
 							</div>
-							<div className="flex justify-between items-center border-t border-neutral-300 w-full">
+							<div className="flex justify-between items-end border-t border-neutral-300 w-full">
 								<p className="text-[10px] text-neutral-400">
 									Voire les détailles
 								</p>
-								<MoveRight strokeWidth={1} className="text-neutral-400" />
+								<MoveRight
+									strokeWidth={1}
+									className="text-neutral-400 translate-y-1"
+								/>
 							</div>
 						</div>
 					</div>
@@ -58,11 +61,14 @@ export default function Home() {
 								<p className="text-sm font-semibold">11</p>
 								<p className="text-[12px]">Leçons en cours</p>
 							</div>
-							<div className="flex justify-between items-center border-t border-neutral-300 w-full">
+							<div className="flex justify-between items-end border-t border-neutral-300 w-full">
 								<p className="text-[10px] text-neutral-400">
 									Voire les détailles
 								</p>
-								<MoveRight strokeWidth={1} className="text-neutral-400" />
+								<MoveRight
+									strokeWidth={1}
+									className="text-neutral-400 translate-y-1"
+								/>
 							</div>
 						</div>
 					</div>
@@ -76,11 +82,14 @@ export default function Home() {
 								<p className="text-sm font-semibold">47</p>
 								<p className="text-[12px]">Tests complétés</p>
 							</div>
-							<div className="flex justify-between items-center border-t border-neutral-300 w-full">
+							<div className="flex justify-between items-end border-t border-neutral-300 w-full">
 								<p className="text-[10px] text-neutral-400">
 									Voire les détailles
 								</p>
-								<MoveRight strokeWidth={1} className="text-neutral-400" />
+								<MoveRight
+									strokeWidth={1}
+									className="text-neutral-400 translate-y-1"
+								/>
 							</div>
 						</div>
 					</div>
@@ -99,11 +108,14 @@ export default function Home() {
 								</p>
 								<p className="text-[12px]">Moyenne générale</p>
 							</div>
-							<div className="flex justify-between items-center border-t border-neutral-300 w-full">
+							<div className="flex justify-between items-end border-t border-neutral-300 w-full">
 								<p className="text-[10px] text-neutral-400">
 									Voire les détailles
 								</p>
-								<MoveRight strokeWidth={1} className="text-neutral-400" />
+								<MoveRight
+									strokeWidth={1}
+									className="text-neutral-400 translate-y-1"
+								/>
 							</div>
 						</div>
 					</div>

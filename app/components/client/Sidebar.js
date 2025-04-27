@@ -58,33 +58,45 @@ export default function Sidebar() {
 						<Link
 							href="#"
 							className={`flex ${
-								opensidebar ? "justify-start" : "justify-center"
-							} gap-3.5 bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-full text-skblue`}
+								opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"
+							} bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-full text-skblue`}
 						>
 							<Home size={20} className="text-skblue" />
-							<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+							<span
+								className={`${
+									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
+								} text-nowrap transition-all duration-300`}
+							>
 								Acceuil
 							</span>
 						</Link>
 						<Link
 							href="#"
 							className={`flex ${
-								opensidebar ? "justify-start" : "justify-center"
-							} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
+								opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"
+							} hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
 						>
 							<GraduationCap size={20} className="text-neutral-500" />
-							<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+							<span
+								className={`${
+									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
+								} text-nowrap transition-all duration-300`}
+							>
 								Mes Matieres
 							</span>
 						</Link>
 						<Link
 							href="#"
 							className={`flex ${
-								opensidebar ? "justify-start" : "justify-center"
-							} gap-3.5 hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
+								opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"
+							} hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
 						>
 							<ChartNoAxesCombined size={20} className="text-neutral-500" />
-							<span className={`${opensidebar ? "inline-block" : "hidden"}`}>
+							<span
+								className={`${
+									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
+								} text-nowrap transition-all duration-300`}
+							>
 								Ma Progression
 							</span>
 						</Link>
