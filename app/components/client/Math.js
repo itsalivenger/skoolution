@@ -6,7 +6,6 @@ import { faSquareRootVariable } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	ICertificatePaperOutline,
-	IExamMultipleChoice,
 	IExamMultipleChoiceOutline,
 	IExamQualificationOutline,
 } from "healthicons-react";
