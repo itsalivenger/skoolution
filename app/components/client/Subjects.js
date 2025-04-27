@@ -34,7 +34,7 @@ export default function Subjects() {
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{/* Card One */}
 					<Link
-						href={`#`}
+						href={`/subjects/math`}
 						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
 					>
 						<div className="bg-white flex justify-center items-center h-[160px]">

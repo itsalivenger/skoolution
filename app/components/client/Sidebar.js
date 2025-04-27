@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import useClickOutside from "../../hooks/UseClickOutside";
+import useClickOutside from "../hooks/UseClickOutside";
 import { ChartNoAxesCombined, GraduationCap, Home, LogOut } from "lucide-react";
 import Link from "next/link";
 

@@ -1,7 +1,4 @@
-import {
-	faEarthAfrica,
-	faSquareRootVariable,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSquareRootVariable } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	Atom,
