@@ -14,6 +14,7 @@ import {
 	Languages,
 	MoveRight,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
 	return (
@@ -31,7 +32,10 @@ export default function Home() {
 				{/* Cards */}
 				<div className="grid grid-cols-1 min-[550px]:grid-cols-2 lg:grid-cols-4 gap-3">
 					{/* First Case */}
-					<div className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden">
+					<Link
+						href={`#`}
+						className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden"
+					>
 						<div className="bg-[#02874F] flex justify-center items-center p-3">
 							<Book className="text-white" />
 						</div>
@@ -50,9 +54,12 @@ export default function Home() {
 								/>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Second Case */}
-					<div className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden">
+					<Link
+						href={`#`}
+						className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden"
+					>
 						<div className="bg-[#F58900] flex justify-center items-center p-3">
 							<BookOpen className="text-white" />
 						</div>
@@ -71,9 +78,12 @@ export default function Home() {
 								/>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Third Case */}
-					<div className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden">
+					<Link
+						href={`#`}
+						className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden"
+					>
 						<div className="bg-skblue flex justify-center items-center p-3">
 							<BadgeCheck className="text-white" />
 						</div>
@@ -92,9 +102,12 @@ export default function Home() {
 								/>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Fourth Case */}
-					<div className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden">
+					<Link
+						href={`#`}
+						className="flex bg-white border border-neutral-200 rounded-xs overflow-hidden"
+					>
 						<div className="bg-[#6366F1] flex justify-center items-center p-3">
 							<ChartSpline className="text-white" />
 						</div>
@@ -118,11 +131,12 @@ export default function Home() {
 								/>
 							</div>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</div>
 			{/* Lecons en cours */}
 			<section className="flex flex-col gap-3">
+				{/* Title */}
 				<div>
 					<p className="text-skblue skblue text-base sm:text-2xl font-semibold">
 						Bravo Amina, tu progresses bien cette semaine 🎉
@@ -131,7 +145,10 @@ export default function Home() {
 				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{/* Card One */}
-					<div className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden">
+					<Link
+						href="#"
+						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
+					>
 						<div className="bg-white flex justify-center items-center h-[160px]">
 							<FontAwesomeIcon
 								icon={faSquareRootVariable}
@@ -152,9 +169,12 @@ export default function Home() {
 								<div className="bg-white h-3 w-[20%]"></div>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Card Two */}
-					<div className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden">
+					<Link
+						href="#"
+						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
+					>
 						<div className="bg-white flex justify-center items-center h-[160px]">
 							<Earth size={80} className="text-[#02874F]" />
 						</div>
@@ -174,9 +194,12 @@ export default function Home() {
 								<div className="bg-white h-3 w-[45%]"></div>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Card Three */}
-					<div className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden">
+					<Link
+						href="#"
+						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
+					>
 						<div className="bg-white flex justify-center items-center h-[160px]">
 							<Atom size={80} className="text-[#455A64]" />
 						</div>
@@ -194,9 +217,12 @@ export default function Home() {
 								<div className="bg-white h-3 w-[60%]"></div>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Card Four */}
-					<div className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden">
+					<Link
+						href="#"
+						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
+					>
 						<div className="bg-white flex justify-center items-center h-[160px]">
 							<Languages size={80} className="text-[#8E24AA]" />
 						</div>
@@ -214,9 +240,12 @@ export default function Home() {
 								<div className="bg-white h-3 w-[35%]"></div>
 							</div>
 						</div>
-					</div>
+					</Link>
 					{/* Card Five */}
-					<div className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden">
+					<Link
+						href="#"
+						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
+					>
 						<div className="bg-white flex justify-center items-center h-[160px]">
 							<FontAwesomeIcon
 								icon={faSquareRootVariable}
@@ -237,7 +266,7 @@ export default function Home() {
 								<div className="bg-white h-3 w-[14%]"></div>
 							</div>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</section>
 		</section>

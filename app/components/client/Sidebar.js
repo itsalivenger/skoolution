@@ -46,8 +46,8 @@ export default function Sidebar() {
 							</span>
 							<span
 								className={`${
-									opensidebar ? "inline-block" : "hidden"
-								} text-skblue`}
+									opensidebar ? "scale-100 w-auto" : "scale-0 w-0"
+								} text-skblue transition-all duration-200`}
 							>
 								oolution
 							</span>
@@ -65,7 +65,7 @@ export default function Sidebar() {
 							<span
 								className={`${
 									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
-								} text-nowrap transition-all duration-300`}
+								} text-nowrap transition-all duration-200`}
 							>
 								Acceuil
 							</span>
@@ -80,7 +80,7 @@ export default function Sidebar() {
 							<span
 								className={`${
 									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
-								} text-nowrap transition-all duration-300`}
+								} text-nowrap transition-all duration-200`}
 							>
 								Mes Matieres
 							</span>
@@ -95,7 +95,7 @@ export default function Sidebar() {
 							<span
 								className={`${
 									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
-								} text-nowrap transition-all duration-300`}
+								} text-nowrap transition-all duration-200`}
 							>
 								Ma Progression
 							</span>
