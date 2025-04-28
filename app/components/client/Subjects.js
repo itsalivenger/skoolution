@@ -37,7 +37,7 @@ export default function Subjects() {
 							className="menu-hover my-2 py-1 text-base font-medium text-black lg:mx-4"
 							onClick=""
 						>
-							Choose Day
+							Choisir une Catégorie
 						</a>
 						<span>
 							<svg
