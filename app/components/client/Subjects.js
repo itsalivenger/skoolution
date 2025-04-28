@@ -16,7 +16,7 @@ export default function Subjects() {
 					</p>
 				</div>
 				{/* Filter */}
-				<div className="flex gap-2 mb-5">
+				<div className="hidden min-[500px]:flex gap-2 mb-5">
 					<div className="w-26 cursor-pointer hover:text-white hover:bg-skblue transition-all duration-300 rounded-xs text-center py-2 bg-skblue text-white border border-neutral-200">
 						Toutes
 					</div>
@@ -30,6 +30,16 @@ export default function Subjects() {
 						Humanités
 					</div>
 				</div>
+				<select
+					id="countries"
+					class="block min-[500px]:hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+				>
+					<option selected>Choose a country</option>
+					<option value="US">United States</option>
+					<option value="CA">Canada</option>
+					<option value="FR">France</option>
+					<option value="DE">Germany</option>
+				</select>
 				{/* Cards */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{/* Card One */}
