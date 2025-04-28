@@ -30,16 +30,50 @@ export default function Subjects() {
 						Humanités
 					</div>
 				</div>
-				<select
-					id="countries"
-					class="block min-[500px]:hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-				>
-					<option selected>Choose a country</option>
-					<option value="US">United States</option>
-					<option value="CA">Canada</option>
-					<option value="FR">France</option>
-					<option value="DE">Germany</option>
-				</select>
+				{/* Select for test */}
+				<div className="block  min-[400px]:hidden group relative cursor-pointer">
+					<div className="flex items-center justify-between space-x-5 bg-white px-4">
+						<a
+							className="menu-hover my-2 py-1 text-base font-medium text-black lg:mx-4"
+							onClick=""
+						>
+							Choose Day
+						</a>
+						<span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								className="h-6 w-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+								/>
+							</svg>
+						</span>
+					</div>
+					<div className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
+						<a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+							Toutes
+						</a>
+
+						<a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+							Sciences
+						</a>
+
+						<a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+							Languages
+						</a>
+
+						<a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+							Humanités
+						</a>
+					</div>
+				</div>
 				{/* Cards */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{/* Card One */}
