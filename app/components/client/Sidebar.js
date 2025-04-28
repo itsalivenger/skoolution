@@ -14,8 +14,6 @@ export default function Sidebar() {
 		// Detect screen width when component mounts
 		if (window.innerWidth >= 768) {
 			setOpensidebar(true); // md and above => open
-		} else {
-			setOpensidebar(false); // mobile => collapsed
 		}
 	}, []);
 	// Change color of current Link
