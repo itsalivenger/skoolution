@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import useClickOutside from "../hooks/UseClickOutside";
 import { ChartNoAxesCombined, GraduationCap, Home, LogOut } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
 	// Close and Open The Sidebar On Focus Change
@@ -17,6 +18,25 @@ export default function Sidebar() {
 			setOpensidebar(false); // mobile => collapsed
 		}
 	}, []);
+	// Change color of current Link
+	const pathname = usePathname();
+	const links = [
+		{
+			href: "/dashboard",
+			label: "dashboard",
+			logo: <Home size={20} />,
+		},
+		{
+			href: "/subjects",
+			label: "subjects",
+			logo: <GraduationCap size={20} />,
+		},
+		{
+			href: "/progression",
+			label: "progression",
+			logo: <ChartNoAxesCombined size={20} />,
+		},
+	];
 	return (
 		<div className="absolute md:relative z-50">
 			<aside
@@ -55,51 +75,29 @@ export default function Sidebar() {
 					</div>
 					{/* Links */}
 					<div className="flex items-center flex-col gap-3.5">
-						<Link
-							href="#"
-							className={`flex ${
-								opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"
-							} bg-blue-50 hover:bg-blue-50 p-2 rounded-md w-full text-skblue`}
-						>
-							<Home size={20} className="text-skblue" />
-							<span
-								className={`${
-									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
-								} text-nowrap transition-all duration-200`}
+						{links.map((link) => (
+							<Link
+								key={link.href}
+								href={link.href}
+								className={`relative flex hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500 
+									${opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"} 
+									${
+										pathname.startsWith(link.href)
+											? "bg-blue-50 text-skblue"
+											: "bg-white text-neutral-500"
+									}
+									`}
 							>
-								Acceuil
-							</span>
-						</Link>
-						<Link
-							href="#"
-							className={`flex ${
-								opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"
-							} hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
-						>
-							<GraduationCap size={20} className="text-neutral-500" />
-							<span
-								className={`${
-									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
-								} text-nowrap transition-all duration-200`}
-							>
-								Mes Matieres
-							</span>
-						</Link>
-						<Link
-							href="#"
-							className={`flex ${
-								opensidebar ? "justify-start gap-3.5" : "justify-center gap-0"
-							} hover:bg-blue-50 p-2 rounded-md w-full text-neutral-500`}
-						>
-							<ChartNoAxesCombined size={20} className="text-neutral-500" />
-							<span
-								className={`${
-									opensidebar ? "scale-100 w-full" : "scale-0 w-0"
-								} text-nowrap transition-all duration-200`}
-							>
-								Ma Progression
-							</span>
-						</Link>
+								{link.logo}
+								<span
+									className={`${
+										opensidebar ? "scale-100 w-full" : "scale-0 w-0"
+									} text-nowrap transition-all duration-200`}
+								>
+									{link.label}
+								</span>
+							</Link>
+						))}
 					</div>
 				</div>
 				{/* Logout */}

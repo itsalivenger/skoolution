@@ -9,15 +9,7 @@ import {
 	IExamMultipleChoiceOutline,
 	IExamQualificationOutline,
 } from "healthicons-react";
-import {
-	Atom,
-	Brain,
-	BrainCircuit,
-	ClipboardPenLine,
-	Dna,
-	FlaskConical,
-	Languages,
-} from "lucide-react";
+import { Brain } from "lucide-react";
 import Link from "next/link";
 
 export default function Math() {
