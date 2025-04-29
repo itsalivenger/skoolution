@@ -12,6 +12,13 @@
 	--color-skblack-second: #ddeaff0f;
 	--color-skgray: #606176;
 	--color-skgray-second: #d3d3d3;
+	/* Subjects Colors */
+	--color-math: #135ea5;
+	--color-physique: #455a64;
+	--color-chimie: #306d8b;
+	--color-svt: #02874f;
+	--color-english: #8e24aa;
+	--color-philosophie: #006064;
 	--font-poppins: "Poppins", sans-serif;
 	--font-inter: "Inter", sans-serif;
 	--breakpoint-xxs: 23.5rem; /*(376px)*/
@@ -125,10 +132,10 @@
 }
 /*---break---*/
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }
