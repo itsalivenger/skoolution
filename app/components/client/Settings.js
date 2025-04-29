@@ -1,4 +1,17 @@
+"use client";
+import { useState } from "react";
+
 export default function Settings() {
+	const [first_name, setFirst_name] = useState("Amina");
+	const [last_name, setLast_name] = useState("El Fassi");
+	const [email, setEmail] = useState("Aminaelfassi17@gmail.com");
+	const [phone, setPhone] = useState("0632433033");
+	const [city, setCity] = useState("Agadir");
+	const [lycee, setLycee] = useState("Abdellah Ben Yassine");
+	const [niveau, setNiveau] = useState("2ème année Bac SMA");
+	const [password, setPassword] = useState("************");
+	const [langue, setLangue] = useState("Français");
+
 	return (
 		<section className="px-0 md:px-5 py-5 flex flex-col gap-6">
 			{/* Title + Cards */}
@@ -11,39 +24,129 @@ export default function Settings() {
 					</p>
 				</div>
 				{/* Fields */}
-				<section className="bg-white px-6 py-8">
-					<div>
-						<div>
-							<div></div>
-							<div>
-								<p>Amina El Fassi</p>
-								<p>Aminaelfassi17@gmail.com</p>
+				<section className="flex flex-col gap-8 bg-white px-3 sm:px-6 py-8">
+					{/* Title */}
+					<div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+						<div className="flex flex-col justify-center items-center text-center sm:text-start sm:flex-row gap-3">
+							<img src="/sk/testimony_4.webp" className="w-22" />
+							<div className="flex flex-col justify-center gap-2">
+								<p className="font-[500]">{first_name + " " + last_name}</p>
+								<p className="text-sm text-neutral-400">{email}</p>
 							</div>
 						</div>
-						<div>Enregistrer</div>
+						<div className="hidden sm:inline-block text-center bg-skblue text-white hover:bg-white hover:text-skblue border border-skblue px-3.5 py-2 rounded-sm transition-all duration-300 cursor-pointer">
+							Enregistrer
+						</div>
 					</div>
-					<form className="flex flex-col">
-						{/* First Fields */}
-						<div className="flex gap-4 w-[calc(33.3333%-40px)]">
-							<div className="flex flex-col gap-1">
-								<label className="px-5">Nom complet</label>
-								<input
-									type="text"
-									className="border border-neutral-400 outline-0 py-2.5 pl-5"
-									placeholder="Ecrivez votre Nom..."
-								/>
-							</div>
-							<div className="flex flex-col gap-1">
-								<label className="px-5">Numéro de téléphone</label>
-								<input
-									type="text"
-									className="border border-neutral-400 outline-0 py-2.5 pl-5"
-									placeholder="Ecrivez votre numéro..."
-								/>
-							</div>
+					{/* Form */}
+					<form className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-4">
+						{/* Field 1 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">Nom complet</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={first_name + " " + last_name}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
 						</div>
-						<button>Supprimer le compte</button>
+						{/* Field 2 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">Adresse Email</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={email}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						{/* Field 3 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">
+								Numéro de téléphone
+							</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={phone}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						{/* Field 4 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">Ville</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={city}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						{/* Field 5 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">Lycée</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={lycee}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						{/* Field 6 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">Niveau</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={niveau}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						{/* Field 7 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">
+								Changer le mot de passe
+							</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={password}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						{/* Field 8 */}
+						<div className="flex flex-col gap-1">
+							<label className="px-5 text-neutral-600">Langue préférée</label>
+							<input
+								type="text"
+								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
+								value={langue}
+								onChange={(e) => {
+									setFirst_name(e.target.value);
+								}}
+							/>
+						</div>
+						<div className="inline-block sm:hidden w-full text-center bg-skblue text-white hover:bg-white hover:text-skblue border border-skblue px-3.5 py-2 rounded-sm transition-all duration-300 cursor-pointer">
+							Enregistrer
+						</div>
 					</form>
+					<button className="w-full sm:w-fit bg-red-100 text-red-600 px-5 py-2 rounded-xs font-[500] -mt-4 sm:mt-4 ">
+						Supprimer le compte
+					</button>
 				</section>
 			</div>
 		</section>
