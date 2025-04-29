@@ -93,6 +93,7 @@ export default function Progression() {
 									</p>
 								)}
 							</div>
+
 							<div
 								className={`relative rounded-full w-1/2 aspect-square bg-conic from-skblue from-${card.degree}% to-neutral-200 to-0% transition-all duration-300`}
 								style={{
@@ -101,7 +102,7 @@ export default function Progression() {
 									}deg, #e5e5e5 0deg)`,
 								}}
 							>
-								<div className="absolute top-1/2 left-1/2 -translate-1/2 w-[85%] h-[85%] flex justify-center items-center text-2xl sm:text-md lg:text-2xl font-semibold bg-white rounded-full">
+								<div className="absolute top-1/2 left-1/2 -translate-1/2 w-[85%] h-[85%] flex justify-center items-center text-2xl sm:text-md lg:text-2xl xl:text-4xl font-semibold bg-white rounded-full">
 									{card.degree}
 									<span className="text-xs text-neutral-400 font-normal">
 										/20
