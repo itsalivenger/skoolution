@@ -100,7 +100,7 @@ export default function Sidebar() {
 				</div>
 				{/* Logout */}
 				<Link
-					href="#"
+					href="/login"
 					className={`flex ${
 						opensidebar ? "justify-start" : "justify-center"
 					} gap-3.5 hover:bg-blue-50 text-neutral-500 p-2 rounded-md w-fit md:w-full`}

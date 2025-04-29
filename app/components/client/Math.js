@@ -44,7 +44,7 @@ export default function Math() {
 					</Link>
 					{/* Card Two */}
 					<Link
-						href={`#`}
+						href={`/subjects/math/lessons`}
 						className="flex flex-col flex-grow-1 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-xs overflow-hidden"
 					>
 						<div className="bg-white flex justify-center items-center h-[160px]">

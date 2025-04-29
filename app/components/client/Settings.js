@@ -2,14 +2,13 @@
 import { useState } from "react";
 
 export default function Settings() {
-	const [first_name, setFirst_name] = useState("Amina");
-	const [last_name, setLast_name] = useState("El Fassi");
+	const [fullName, setFullName] = useState("Amina El Fassi");
 	const [email, setEmail] = useState("Aminaelfassi17@gmail.com");
 	const [phone, setPhone] = useState("0632433033");
 	const [city, setCity] = useState("Agadir");
 	const [lycee, setLycee] = useState("Abdellah Ben Yassine");
 	const [niveau, setNiveau] = useState("2ème année Bac SMA");
-	const [password, setPassword] = useState("************");
+	const [password, setPassword] = useState("123456789");
 	const [langue, setLangue] = useState("Français");
 
 	return (
@@ -30,7 +29,7 @@ export default function Settings() {
 						<div className="flex flex-col justify-center items-center text-center sm:text-start sm:flex-row gap-3">
 							<img src="/sk/testimony_4.webp" className="w-22" />
 							<div className="flex flex-col justify-center gap-2">
-								<p className="font-[500]">{first_name + " " + last_name}</p>
+								<p className="font-[500]">{fullName}</p>
 								<p className="text-sm text-neutral-400">{email}</p>
 							</div>
 						</div>
@@ -46,9 +45,9 @@ export default function Settings() {
 							<input
 								type="text"
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
-								value={first_name + " " + last_name}
+								value={fullName}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setFullName(e.target.value);
 								}}
 							/>
 						</div>
@@ -60,7 +59,7 @@ export default function Settings() {
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={email}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setEmail(e.target.value);
 								}}
 							/>
 						</div>
@@ -74,7 +73,7 @@ export default function Settings() {
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={phone}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setPhone(e.target.value);
 								}}
 							/>
 						</div>
@@ -86,7 +85,7 @@ export default function Settings() {
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={city}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setCity(e.target.value);
 								}}
 							/>
 						</div>
@@ -98,7 +97,7 @@ export default function Settings() {
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={lycee}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setLycee(e.target.value);
 								}}
 							/>
 						</div>
@@ -110,7 +109,7 @@ export default function Settings() {
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={niveau}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setNiveau(e.target.value);
 								}}
 							/>
 						</div>
@@ -120,11 +119,11 @@ export default function Settings() {
 								Changer le mot de passe
 							</label>
 							<input
-								type="text"
+								type="password"
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={password}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setPassword(e.target.value);
 								}}
 							/>
 						</div>
@@ -136,7 +135,7 @@ export default function Settings() {
 								className="border border-neutral-200 bg-neutral-100  text-neutral-400 focus:text-neutral-600 outline-0 py-2.5 pl-5 rounded-xs"
 								value={langue}
 								onChange={(e) => {
-									setFirst_name(e.target.value);
+									setLangue(e.target.value);
 								}}
 							/>
 						</div>
@@ -144,7 +143,7 @@ export default function Settings() {
 							Enregistrer
 						</div>
 					</form>
-					<button className="w-full sm:w-fit bg-red-100 text-red-600 px-5 py-2 rounded-xs font-[500] -mt-4 sm:mt-4 ">
+					<button className="w-full sm:w-fit bg-red-100 hover:bg-red-600 hover:text-white text-red-600 px-5 py-2 rounded-xs font-[500] -mt-4 sm:mt-4 transition-all duration-300 cursor-pointer">
 						Supprimer le compte
 					</button>
 				</section>
