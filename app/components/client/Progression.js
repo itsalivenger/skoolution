@@ -82,7 +82,7 @@ export default function Progression() {
 						<div
 							className={`relative rounded-full w-1/2 aspect-square bg-conic from-skblue from-${general.degree}% to-neutral-200 to-0% transition-all duration-300`}
 							style={{
-								background: `conic-gradient(var(--color-skblue)) ${
+								background: `conic-gradient(var(--color-skblue) ${
 									general.degree * 18
 								}deg, #e5e5e5 0deg)`,
 							}}
@@ -110,7 +110,7 @@ export default function Progression() {
 							key={card.subject}
 							className="col-span-12 sm:col-span-4 xl:col-span-3 bg-white p-3 pb-6 flex flex-col justify-start items-center gap-5 shadow-[3px_3px_10px_0px_rgba(0,_0,_0,_0.1)] border border-neutral-200"
 						>
-							<div className="flex justify-between self-start w-full">
+							<div className="flex items-center justify-between self-start w-full">
 								<p className="font-semibold">{card.subject}</p>
 								{card.rank && (
 									<p
@@ -129,7 +129,7 @@ export default function Progression() {
 									}deg, #e5e5e5 0deg)`,
 								}}
 							>
-								<div className="absolute top-1/2 left-1/2 -translate-1/2 w-[85%] h-[85%] flex justify-center items-center text-2xl sm:text-base md:text-md lg:text-2xl xl:text-4xl font-semibold bg-white rounded-full">
+								<div className="absolute top-1/2 left-1/2 -translate-1/2 w-[85%] h-[85%] flex justify-center items-center text-2xl sm:text-base md:text-md lg:text-xl font-semibold bg-white rounded-full">
 									{card.degree}
 									<span className="text-xs text-neutral-400 font-normal">
 										/20
