@@ -4,34 +4,61 @@ export default function Progression() {
 	const general = {
 		title: "Moyenne générale",
 		degree: "16.5",
-		color: "skblue",
 	};
 	const cards = [
 		{
+			slug: "math",
 			subject: "Mathématiques",
 			degree: 17.5,
 			rank: 5,
-			color: "math",
+			bg_rank: "bg-math/33",
+			color: "text-math",
+			bg: "bg-math",
 		},
 		{
+			slug: "physique",
 			subject: "Physique",
 			degree: 16.5,
 			rank: false,
-			color: "physique",
+			bg_rank: "bg-physique/33",
+			color: "text-physique",
+			bg: "bg-physique",
 		},
-		{ subject: "Chimie", degree: 14, rank: false, color: "chimie" },
-		{ subject: "S.V.T", degree: 15.75, rank: false, color: "svt" },
 		{
+			slug: "chimie",
+			subject: "Chimie",
+			degree: 14,
+			rank: false,
+			bg_rank: "bg-chimie/33",
+			color: "text-chimie",
+			bg: "bg-chimie",
+		},
+		{
+			slug: "svt",
+			subject: "S.V.T",
+			degree: 15.75,
+			rank: false,
+			bg_rank: "bg-svt/33",
+			color: "text-svt",
+			bg: "bg-svt",
+		},
+		{
+			slug: "english",
 			subject: "Anglais",
 			degree: 18.5,
 			rank: 1,
-			color: "english",
+			bg_rank: "bg-english/33",
+			color: "text-english",
+			bg: "bg-english",
 		},
 		{
+			slug: "philosophie",
 			subject: "Philosophie",
 			degree: 19,
 			rank: 10,
-			color: "philosophie",
+			bg_rank: "bg-philosophie/33",
+			color: "text-philosophie",
+			bg: "bg-philosophie",
 		},
 	];
 	return (
@@ -55,7 +82,7 @@ export default function Progression() {
 						<div
 							className={`relative rounded-full w-1/2 aspect-square bg-conic from-skblue from-${general.degree}% to-neutral-200 to-0% transition-all duration-300`}
 							style={{
-								background: `conic-gradient(var(--color-${general.color}) ${
+								background: `conic-gradient(var(--color-skblue)) ${
 									general.degree * 18
 								}deg, #e5e5e5 0deg)`,
 							}}
@@ -87,7 +114,7 @@ export default function Progression() {
 								<p className="font-semibold">{card.subject}</p>
 								{card.rank && (
 									<p
-										className={`bg-${card.color}/33 font-bold text-${card.color} text-[8px] flex justify-center items-center p-1 h-4`}
+										className={`${card.bg_rank} font-bold ${card.color} text-[8px] flex justify-center items-center p-1 h-4`}
 									>
 										TOP {card.rank} %
 									</p>
@@ -97,12 +124,12 @@ export default function Progression() {
 							<div
 								className={`relative rounded-full w-1/2 aspect-square bg-conic from-skblue from-${card.degree}% to-neutral-200 to-0% transition-all duration-300`}
 								style={{
-									background: `conic-gradient(var(--color-${card.color}) ${
+									background: `conic-gradient(var(--color-${card.slug}) ${
 										card.degree * 18
 									}deg, #e5e5e5 0deg)`,
 								}}
 							>
-								<div className="absolute top-1/2 left-1/2 -translate-1/2 w-[85%] h-[85%] flex justify-center items-center text-2xl sm:text-md lg:text-2xl xl:text-4xl font-semibold bg-white rounded-full">
+								<div className="absolute top-1/2 left-1/2 -translate-1/2 w-[85%] h-[85%] flex justify-center items-center text-2xl sm:text-base md:text-md lg:text-2xl xl:text-4xl font-semibold bg-white rounded-full">
 									{card.degree}
 									<span className="text-xs text-neutral-400 font-normal">
 										/20
