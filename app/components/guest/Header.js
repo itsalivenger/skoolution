@@ -49,7 +49,7 @@ export default function Header({ isOpenMenu, setIsOpenMenu }) {
 						/>
 					</div>
 					<Link
-						href="/login"
+						href="/dashboard"
 						className="flex sm:hidden border cursor-pointer  border-gray-400 p-2.5 rounded-full  hover:bg-neutral-100 bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-700"
 					>
 						<LogIn size={20} strokeWidth={2} className="text-skblue" />
