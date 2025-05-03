@@ -1,0 +1,35 @@
+{/* White div second student */}
+						<div className="absolute -bottom-12 left-1/2 -translate-x-1/2 rounded-lg shadow-lg bg-white p-4 flex flex-col justify-center items-center gap-1.5">
+							<p className="font-bold">56, 5470+</p>
+							<p className="text-skgray mb-2">Élèves apprennents</p>
+							<div className="flex">
+								<img
+									src="/SK/profile_1.webp"
+									alt="Profile 1"
+									className="w-11 h-11"
+								/>
+								<img
+									src="/SK/profile_2.webp"
+									alt="Profile 2"
+									className="w-11 h-11 -ml-3"
+								/>
+								<img
+									src="/SK/profile_3.webp"
+									alt="Profile 3"
+									className="w-11 h-11 -ml-3"
+								/>
+								<img
+									src="/SK/profile_4.webp"
+									alt="Profile 4"
+									className="w-11 h-11 -ml-3"
+								/>
+								<div className="bg-skblue -ml-3 flex justify-center items-center w-11 h-11 text-lg text-white rounded-full">
+									+
+								</div>
+							</div>
+						</div>
+
+
+
+
+
