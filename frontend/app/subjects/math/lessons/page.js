@@ -1,6 +1,7 @@
+"use client"
 import Header from "@/app/components/client/Header";
 import Sidebar from "@/app/components/client/Sidebar";
-import Lessons from "@/app/components/client/Lessons";
+import Lessons from '@/app/components/client/Lessons';
 
 export default function page() {
 	return (

@@ -20,7 +20,7 @@ export default function Header() {
 						<button className="bg-skblue text-white flex items-center justify-center gap-2 px-1.5 md:py-3 md:px-6 h-9 md:h-10 w-9 md:w-auto rounded-full md:rounded-none cursor-pointer">
 							<Pencil size={18} />
 							<span className="hidden md:inline text-nowrap">
-								2ème année Bac SMA
+								2ème année Bac PC/SVT
 							</span>
 						</button>
 					</div>
