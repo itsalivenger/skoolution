@@ -24,3 +24,10 @@ export function getFromStorage(key) {
     return null;
   }
 }
+
+export function removeFromStorage(key) {
+  if (typeof window !== 'undefined' && localStorage.getItem(key)) {
+    localStorage.removeItem(key);
+  }
+}
+

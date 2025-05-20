@@ -1,15 +1,15 @@
 "use client";
-import { Dot, X } from "lucide-react";
+import { Dot, Router, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
-import { getFromStorage, saveInStorage } from "@/app/utils/storage";
-import update_params from "@/app/utils/helper_functions";
+import { getFromStorage } from "@/app/utils/storage";
+import { selectNextItem, updateTheta, finalize, update_b } from "@/app/utils/helper_functions";
+import { useRouter } from "next/navigation";
 
 export default function Test1() {
-	/* ────────────── state ────────────── */
 	/* ────────────── state ────────────── */
 	const [loading, setLoading] = useState(true);
 	const [fetchError, setFetchError] = useState(null);
@@ -22,10 +22,13 @@ export default function Test1() {
 	const [answers, setAnswers] = useState([]);   // user answers in asked‑order
 	const [validated, setValidated] = useState(false);
 
+	const [theta, setTheta] = useState(0);         // θ courant
+	const [itemsUsed, setItemsUsed] = useState([]); // objets déjà posés (pour updateΘ)
+
+	const router = useRouter();
+
 	const MAX_QUESTIONS = 15;
 
-	/* ────────────── fetch questions once ────────────── */
-	/* ────────────── on mount : load pool then pick first question ────────────── */
 	useEffect(() => {
 		try {
 			const currentTest = getFromStorage("currentTest");
@@ -36,7 +39,6 @@ export default function Test1() {
 
 			// 👉 first pick (trivial for now)
 			const first = pickFirstQuestion(currentTest.questions);
-			console.log(first);
 			setCurrentQ(first);
 			setAsked([first]);
 		} catch (err) {
@@ -56,32 +58,48 @@ export default function Test1() {
 			Math.abs(q.param_b) < Math.abs(best.param_b) ? q : best
 		);
 	}
-	/* ────────────── NEXT‑QUESTION STRATEGY ────────────── */
-	function selectNextQuestion({ pool, asked, answers }) {
-		// TODO 👉 replace this with your IRT/TRA logic
-		// For now: pick the first item not yet asked
-		return pool.find((q) => !asked.includes(q));
-	}
 
-	/* ────────────── validate, then go to next ────────────── */
+
 	const next = () => {
-		const newAnswers = [...answers, selectedOption];
-		setAnswers(newAnswers);
+		const isCorrect = selectedOption === currentQ.correct_choice ? 1 : 0;
+
+		const newResponses = [...answers, isCorrect];
+		const newItems = [
+			...itemsUsed,
+			{ a: currentQ.param_a ?? 1, b: currentQ.param_b }
+		];
+
+
+		// update theta et b
+		const newTheta = updateTheta(theta, newResponses, newItems);
+		update_b({currentQuest: currentQ, theta, r: isCorrect, question_num: asked.length});
+
+		// 3. Mettre à jour les états React
+		setAnswers(newResponses);
+		setItemsUsed(newItems);
+		setTheta(newTheta);
 		setValidated(false);
 		setSelectedOption(null);
 
-		if (asked.length >= 15 || asked.length >= pool.length) {
-			console.log("Finished – answers:", newAnswers);
-			// TODO: send results
+		// 4. Vérifier fin de test
+		if (asked.length >= MAX_QUESTIONS || asked.length >= pool.length) {
+			console.log("Finished – θ final:", newTheta);
+			const user_id = getFromStorage('user_id')
+			const competence_id = getFromStorage('current_competence_id')
+			finalize({ user_id, competence_id, theta })
+
+			router.push('/subjects/math/lessons/');
 			return;
 		}
 
-		const nextQ = selectNextQuestion({
+		const nextQ = selectNextItem({
+			theta: newTheta,
 			pool,
-			asked,
-			answers: newAnswers,
+			askedSet: [...asked, currentQ],
 		});
 
+
+		
 		if (!nextQ) {
 			console.warn("No more questions available");
 			return;
@@ -90,6 +108,7 @@ export default function Test1() {
 		setCurrentQ(nextQ);
 		setAsked((a) => [...a, nextQ]);
 	};
+
 
 	const showCorrectAnswer = () => {
 		if (selectedOption === null) return;
@@ -235,7 +254,7 @@ export default function Test1() {
 							disabled={selectedOption === null}
 							className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
 						>
-							{asked.length - 1 === pool.length - 1 ? "Terminer" : "Suivant"}
+							{asked.length >= MAX_QUESTIONS ? "Terminer" : "Suivant"}
 						</button>
 					) : (
 						<button
